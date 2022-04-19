@@ -6,6 +6,8 @@
 #include "Engine/DataAsset.h"
 #include "GameplayTags.h"
 #include "./FortniteGame.h"
+#include "FortAlterationItemDefinition.h"
+#include "FortWorldItemDefinition.h"
 #include "FortWeaponItemDefinition.generated.h"
 
 UCLASS(BlueprintType)
