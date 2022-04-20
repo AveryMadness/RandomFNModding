@@ -35,7 +35,7 @@ TEnumAsByte<EFortMovementStyle>                    CurrentMovementStyle;
 UPROPERTY(EditAnywhere)                     
 EFortPawnPushSize                     	   	   PushSize;    
 UPROPERTY(EditAnywhere)                              
-unsigned char                                      bUseBaseChanged : 1;  
+bool	                                           bUseBaseChanged : 1;  
 UPROPERTY(EditAnywhere)                     
 byte                                               TeleportCounter; 
 UPROPERTY(EditAnywhere)                          
