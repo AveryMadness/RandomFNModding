@@ -15,100 +15,103 @@ class FORTNITEGAME_API AFortPawn : public ACharacter
 	
 public:
 
-	struct FDataTableRowHandle                         PawnStatHandle;                                           // 0x0808(0x0010) (CPF_Edit, CPF_BlueprintVisible)
-	float                                              SlidingFriction;                                          // 0x081C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	float                                              SlidingBrakingDeceleration;                               // 0x0820(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	TEnumAsByte<EFortMovementStyle>                    CurrentMovementStyle;                                     // 0x0824(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      bUseBaseChanged : 1;                                      // 0x0826(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      TeleportCounter;                                          // 0x0827(0x0001) (CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	int                                                PawnUniqueID;                                             // 0x082C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	class AFortWeapon*                                 CurrentWeapon;                                            // 0x0830(0x0008) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	TArray<class AFortWeapon*>                         CurrentWeaponList;                                        // 0x0838(0x0010) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_Transient)
-	unsigned char                                      bIgnoreNextFallingDamage : 1;                             // 0x0848(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FName                                       WeaponHandSocketName;                                     // 0x0850(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class AActor*                                      SpawnSpot;                                                // 0x0858(0x0008) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FGameplayTagContainer                       DeathTags;                                                // 0x0860(0x0020) (CPF_Transient)
-	float                                              SpawnImmunityTime;                                        // 0x0880(0x0004) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bIsDying : 1;                                             // 0x0884(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_ZeroConstructor, CPF_EditConst, CPF_IsPlainOldData)
-	unsigned char                                      bPlayedDying : 1;                                         // 0x0885(0x0001) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bIsHiddenForDeath : 1;                                    // 0x0886(0x0001) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_ZeroConstructor, CPF_EditConst, CPF_IsPlainOldData)
-	TArray<class AFortPickup*>                         IncomingPickups;                                          // 0x0888(0x0010) (CPF_ZeroConstructor, CPF_Transient)
-	TArray<struct FFortPickupEntryData>                PickupDirectionData;                                      // 0x0898(0x0010) (CPF_ZeroConstructor)
-	unsigned char                                      bIsKnockedback : 1;                                       // 0x08A8(0x0001) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bIsStunned : 1;                                           // 0x08A9(0x0001) (CPF_BlueprintVisible, CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bIsStaggered : 1;                                         // 0x08AA(0x0001) (CPF_BlueprintVisible, CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	int                                                AdditiveCringeCount;                                      // 0x08AC(0x0004) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	float                                              AdditiveCringeDuration;                                   // 0x08B0(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	struct FVector_NetQuantize                         PushMomentum;                                             // 0x08B4(0x000C) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_Transient)
-	class USkeletalMeshSocket*                         DeathHitSocket;                                           // 0x0918(0x0008) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bIsDBNO : 1;                                              // 0x0920(0x0001) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	float                                              LastPostRenderTraceTime;                                  // 0x0924(0x0004) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bPostRenderTraceSucceeded : 1;                            // 0x0928(0x0001) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	float                                              TeamBeaconMaxDist;                                        // 0x092C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FColor                                      TeamBeaconTextColor;                                      // 0x0930(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_IsPlainOldData)
-	float                                              LastTakeHitTimeTimeout;                                   // 0x0934(0x0004) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	float                                              LastDamagedTime;                                          // 0x0938(0x0004) (CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      bSkipAnalogJump : 1;                                      // 0x093C(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class AFortWeapon*                                 CurrentlyAttachedWeapon;                                  // 0x0940(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	class UPrimitiveComponent*                         CachedNavFloor;                                           // 0x0948(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_Transient, CPF_InstancedReference, CPF_IsPlainOldData)
-	float                                              MaxFootstepDistance;                                      // 0x0950(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class USoundBase*                                  DefaultFootstepSound;                                     // 0x0958(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class USoundBase*                                  DefaultFastFootstepSound;                                 // 0x0960(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class USoundBase*                                  DefaultLandingSound;                                      // 0x0968(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class USoundBase*                                  DefaultHardLandingSound;                                  // 0x0970(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class USoundBase*                                  DefaultJumpSound;                                         // 0x0978(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      bCanCapsuleBeUsedForTargeting : 1;                        // 0x0980(0x0001) (CPF_Edit)
-	unsigned char                                      bUseLineTestForDamageZoneBoneDetection : 1;               // 0x0980(0x0001) (CPF_Edit)
-	float                                              LineTestForDamageZoneBoneDetectionRadius;                 // 0x0984(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FPawnDamageZones                            DamageZones[0x4];                                         // 0x0988(0x0018) (CPF_Edit)
-	unsigned char                                      DamageZoneActiveBitMask;                                  // 0x09E8(0x0001) (CPF_Net, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	float                                              TargettingZOffset;                                        // 0x09EC(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-	unsigned char                                      JumpFlashCount;                                           // 0x09F0(0x0001) (CPF_Net, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class UAudioComponent*                             EmoteAudioComp;                                           // 0x0A00(0x0008) (CPF_BlueprintVisible, CPF_ExportObject, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-	struct FScriptMulticastDelegate                    OnPawnLanded;                                             // 0x0A08(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnHitPawn;                                                // 0x0A18(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnDied;                                                   // 0x0A28(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnDeathEffects;                                           // 0x0A38(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnDamaged;                                                // 0x0B30(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnWeaponEquippedDelegate;                                 // 0x0B40(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	class UClass*                                      HealthRegenDelayGameplayEffect;                           // 0x0B50(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class UClass*                                      HealthRegenGameplayEffect;                                // 0x0B58(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class UClass*                                      ShieldRegenDelayGameplayEffect;                           // 0x0B60(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	class UClass*                                      ShieldRegenGameplayEffect;                                // 0x0B68(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      bIsInvulnerable : 1;                                      // 0x0B70(0x0001) (CPF_BlueprintVisible, CPF_Net, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	int                                                WeaponHolsterCounter;                                     // 0x0B7C(0x0004) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	unsigned char                                      bWeaponHolstered : 1;                                     // 0x0B80(0x0001) (CPF_Net, CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	float                                              StaySpottedTime;                                          // 0x0B84(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FName                                       SpottedEvent;                                             // 0x0B88(0x0008) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-	unsigned char                                      bSpotted : 1;                                             // 0x0B90(0x0001) (CPF_Net, CPF_Transient)
-	class UFortFeedbackBank*                           DefaultFeedback;                                          // 0x0B98(0x0008) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	TArray<struct FFortPawnVocalChord>                 VocalChords;                                              // 0x0BA0(0x0010) (CPF_Net, CPF_ZeroConstructor, CPF_Transient)
-	class UFortHealthSet*                              HealthSet;                                                // 0x0C00(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-	class UFortControlResistanceSet*                   ControlResistanceSet;                                     // 0x0C08(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-	class UFortDamageSet*                              DamageSet;                                                // 0x0C10(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-	class UFortMovementSet*                            MovementSet;                                              // 0x0C18(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-	unsigned char                                      bHealthSynced : 1;                                        // 0x0C20(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FScriptMulticastDelegate                    OnAbilityDecisionWindowStackUpdated;                      // 0x0C30(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
-	class UFortAbilitySystemComponent*                 AbilitySystemComponent;                                   // 0x0C40(0x0008) (CPF_ExportObject, CPF_ZeroConstructor, CPF_InstancedReference, CPF_IsPlainOldData)
-	TArray<struct FFortActiveMontageDecisionWindow>    DecisionWindowStack;                                      // 0x0C48(0x0010) (CPF_ZeroConstructor)
-	unsigned char                                      bPrimaryInputHeld : 1;                                    // 0x0C58(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      bSecondaryInputHeld : 1;                                  // 0x0C59(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-	unsigned char                                      bPrimaryInputQueued : 1;                                  // 0x0C5A(0x0001) (CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FGameplayTagContainer                       GameplayTags;                                             // 0x0C60(0x0020) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_DisableEditOnInstance)
-	struct FText                                       DisplayName;                                              // 0x0C80(0x0018) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Net, CPF_DisableEditOnInstance)
-	TArray<struct FDamagerInfo>                        Damagers;                                                 // 0x0C98(0x0010) (CPF_ZeroConstructor, CPF_Transient)
-	class UFortHealthBarIndicator*                     HealthBarIndicator;                                       // 0x0CA8(0x0008) (CPF_ZeroConstructor, CPF_Transient, CPF_IsPlainOldData)
-	struct FGameplayTag                                CurrentCalloutTag;                                        // 0x0CB0(0x0008) (CPF_Net)
-	TArray<struct FCalloutEntry>                       CalloutEntries;                                           // 0x0CB8(0x0010) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
-	float                                              HealthBarWidth;                                           // 0x0CC8(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	float                                              HealthBarHeightMultiplier;                                // 0x0CCC(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FSlateBrush                                 SpottedBrush;                                             // 0x0CD8(0x0090) (CPF_Edit, CPF_DisableEditOnInstance)
-	struct FVector                                     SpottedIconOffset;                                        // 0x0D68(0x000C) (CPF_Edit, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-	int                                                ClientNonRenderedAnimUpdateRate;                          // 0x0D74(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-	int                                                MaxEvalRateForInterpolation;                              // 0x0D78(0x0004) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
-	TArray<float>                                      AnimUpdateRateVisibleMaxDistanceFactor;                   // 0x0D80(0x0010) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
-	TMap<int, int>                                     LODToFrameSkipMap;                                        // 0x0D90(0x0050) (CPF_Edit, CPF_ZeroConstructor, CPF_DisableEditOnInstance)
-	unsigned char                                      bPostProcessNavLocation : 1;                              // 0x0E00(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
-	struct FFortConversationSentence                   CurrentSentence;                                          // 0x0E08(0x00B0) (CPF_Net)
-	struct FScriptMulticastDelegate                    OnPawnHealthChanged;                                      // 0x0ED0(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
+struct FDataTableRowHandle                         PawnStatHandle;                            
+float                                              SlidingFriction;                           
+float                                              SlidingBrakingDeceleration;                
+TEnumAsByte<EFortMovementStyle>                    CurrentMovementStyle;                      
+EFortPawnPushSize                     	   	   PushSize;                                  
+unsigned char                                      bUseBaseChanged : 1;                       
+byte                                               TeleportCounter;                           
+int                                                PawnUniqueID;                              
+class AFortWeapon*                                 CurrentWeapon;                             
+TArray<class AFortWeapon*>                         CurrentWeaponList;                         
+bool                                               bIgnoreNextFallingDamage : 1;              
+struct FName                                       WeaponHandSocketName;                      
+class AActor*                                      SpawnSpot;                                 
+struct FGameplayTagContainer                       DeathTags;                                 
+float                                              SpawnImmunityTime;                         
+bool                                               bIsDying : 1;                              
+bool                                               bPlayedDying : 1;                          
+bool                                               bIsHiddenForDeath : 1;                     
+TArray<class AFortPickup*>                         IncomingPickups;                           
+TArray<struct FFortPickupEntryData>                PickupDirectionData;                       
+bool                                               bIsKnockedback : 1;                        
+bool                                               bIsStunned : 1;                            
+bool                                               bIsStaggered : 1;                          
+TEnumAsByte<EFortControlRecoveryBehavior>          ControlRecoveryBehavior;                   
+int                                                AdditiveCringeCount;                       
+float                                              AdditiveCringeDuration;                    
+struct FVector_NetQuantize                         PushMomentum;                              
+class USkeletalMeshSocket*                         DeathHitSocket;                            
+bool                                               bIsDBNO : 1;                               
+float                                              LastPostRenderTraceTime;                   
+bool                                               bPostRenderTraceSucceeded : 1;             
+float                                              TeamBeaconMaxDist;                         
+struct FColor                                      TeamBeaconTextColor;                       
+float                                              LastTakeHitTimeTimeout;                    
+float                                              LastDamagedTime;                           
+bool                                               bSkipAnalogJump : 1;                       
+class AFortWeapon*                                 CurrentlyAttachedWeapon;                   
+class UPrimitiveComponent*                         CachedNavFloor;                            
+float                                              MaxFootstepDistance;                       
+class USoundBase*                                  DefaultFootstepSound;                      
+class USoundBase*                                  DefaultFastFootstepSound;                  
+class USoundBase*                                  DefaultLandingSound;                       
+class USoundBase*                                  DefaultHardLandingSound;                   
+class USoundBase*                                  DefaultJumpSound;                          
+bool                                               bCanCapsuleBeUsedForTargeting : 1;         
+bool                                               bUseLineTestForDamageZoneBoneDetection : 1;
+float                                              LineTestForDamageZoneBoneDetectionRadius;  
+struct FPawnDamageZones                            DamageZones[0x4];                          
+unsigned char                                      DamageZoneActiveBitMask;                   
+float                                              TargettingZOffset;                         
+byte                                               JumpFlashCount;                            
+class UAudioComponent*                             EmoteAudioComp;                            
+struct FScriptMulticastDelegate                    OnPawnLanded;                              
+struct FScriptMulticastDelegate                    OnHitPawn;                                 
+struct FScriptMulticastDelegate                    OnDied;                                    
+struct FScriptMulticastDelegate                    OnDeathEffects;                            
+struct FScriptMulticastDelegate                    OnDamaged;                                 
+struct FScriptMulticastDelegate                    OnWeaponEquippedDelegate;                  
+class UClass*                                      HealthRegenDelayGameplayEffect;            
+class UClass*                                      HealthRegenGameplayEffect;                 
+class UClass*                                      ShieldRegenDelayGameplayEffect;            
+class UClass*                                      ShieldRegenGameplayEffect;                 
+bool                                               bIsInvulnerable : 1;                       
+int                                                WeaponHolsterCounter;                      
+bool                                               bWeaponHolstered : 1;                      
+float                                              StaySpottedTime;                           
+struct FName                                       SpottedEvent;                              
+bool                                               bSpotted : 1;                              
+class UFortFeedbackBank*                           DefaultFeedback;                           
+TArray<struct FFortPawnVocalChord>                 VocalChords;                               
+class UFortHealthSet*                              HealthSet;                                 
+class UFortControlResistanceSet*                   ControlResistanceSet;                      
+class UFortDamageSet*                              DamageSet;                                 
+class UFortMovementSet*                            MovementSet;                               
+bool                                               bHealthSynced : 1;                         
+struct FScriptMulticastDelegate                    OnAbilityDecisionWindowStackUpdated;       
+class UFortAbilitySystemComponent*                 AbilitySystemComponent;                    
+TArray<struct FFortActiveMontageDecisionWindow>    DecisionWindowStack;                       
+bool                                               bPrimaryInputHeld : 1;                     
+bool                                               bSecondaryInputHeld : 1;                   
+bool                                               bPrimaryInputQueued : 1;                   
+struct FGameplayTagContainer                       GameplayTags;                              
+struct FText                                       DisplayName;                               
+TArray<struct FDamagerInfo>                        Damagers;                                  
+class UFortHealthBarIndicator*                     HealthBarIndicator;                        
+struct FGameplayTag                                CurrentCalloutTag;                         
+TArray<struct FCalloutEntry>                       CalloutEntries;                            
+float                                              HealthBarWidth;                            
+float                                              HealthBarHeightMultiplier;                 
+struct FSlateBrush                                 SpottedBrush;                              
+struct FVector                                     SpottedIconOffset;                         
+int                                                ClientNonRenderedAnimUpdateRate;           
+int                                                MaxEvalRateForInterpolation;               
+TArray<float>                                      AnimUpdateRateVisibleMaxDistanceFactor;    
+TMap<int, int>                                     LODToFrameSkipMap;                         
+//Unknown Enum TEnumAsByte<>                       UroShiftBucket;            
+bool                                               bPostProcessNavLocation : 1;               
+struct FFortConversationSentence                   CurrentSentence;                           
+struct FScriptMulticastDelegate                    OnPawnHealthChanged;                       
 };
