@@ -7,7 +7,11 @@
 #include "GameplayTags.h"
 #include "./FortniteGame.h"
 #include "FortAlterationItemDefinition.h"
-#include "FortWorldItemDefinition.h"
+#include "FortHero.h"
+#include "CustomCharacterPart.h"
+#include "CustomColorSwatch.h"
+#include "CustomCharacterPartModifier.h"
+#include "FortVisibilityComponent.h"
 #include "FortPlayerPawn.generated.h"
 
 UCLASS(BlueprintType)
