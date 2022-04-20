@@ -17,7 +17,9 @@ class FORTNITEGAME_API UFortItemDefinition : public UMcpItemDefinitionBase
 public:
 
     UPROPERTY(EditAnywhere)
-	struct FScriptMulticastDelegate                    OnItemCountChanged;       
+	struct FScriptMulticastDelegate                    OnItemCountChanged;  
+    UPROPERTY(EditAnywhere)
+    EFortItemType					   ItemType;
     UPROPERTY(EditAnywhere)                                // 0x0038(0x0010) (CPF_ZeroConstructor, CPF_InstancedReference, CPF_BlueprintAssignable)
 	int                                                MinLevel;          
     UPROPERTY(EditAnywhere)                                       // 0x004C(0x0004) (CPF_Edit, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_ZeroConstructor, CPF_DisableEditOnInstance, CPF_IsPlainOldData)
