@@ -13,6 +13,8 @@
 UCLASS(BlueprintType)
 class FORTNITEGAME_API UFortWeaponRangedItemDefinition : public UFortWeaponItemDefinition
 {
+
+	GENERATED_BODY()
 public:
 	bool                                               bUseNativeWeaponTrace : 1;                                // 0x0648(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
 	bool                                               bTraceThroughPawns : 1;                                   // 0x0649(0x0001) (CPF_Edit, CPF_ZeroConstructor, CPF_IsPlainOldData)
