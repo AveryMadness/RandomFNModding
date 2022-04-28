@@ -35,7 +35,7 @@ TEnumAsByte<EFortMovementStyle>                    CurrentMovementStyle;
 UPROPERTY(EditAnywhere)                     
 EFortPawnPushSize                     	   	   PushSize;    
 UPROPERTY(EditAnywhere)                              
-bool	                                           bUseBaseChanged : 1;  
+bool	                                           bUseBaseChanged;  
 UPROPERTY(EditAnywhere)                     
 byte                                               TeleportCounter; 
 UPROPERTY(EditAnywhere)                          
@@ -45,7 +45,7 @@ class AFortWeapon*                                 CurrentWeapon;
 UPROPERTY(EditAnywhere)                          
 TArray<class AFortWeapon*>                         CurrentWeaponList;  
 UPROPERTY(EditAnywhere)                       
-bool                                               bIgnoreNextFallingDamage : 1;  
+bool                                               bIgnoreNextFallingDamage;  
 UPROPERTY(EditAnywhere)            
 struct FName                                       WeaponHandSocketName;   
 UPROPERTY(EditAnywhere)                   
@@ -55,21 +55,21 @@ struct FGameplayTagContainer                       DeathTags;
 UPROPERTY(EditAnywhere)                               
 float                                              SpawnImmunityTime;  
 UPROPERTY(EditAnywhere)                       
-bool                                               bIsDying : 1; 
+bool                                               bIsDying; 
 UPROPERTY(EditAnywhere)                             
-bool                                               bPlayedDying : 1; 
+bool                                               bPlayedDying; 
 UPROPERTY(EditAnywhere)                         
-bool                                               bIsHiddenForDeath : 1;   
+bool                                               bIsHiddenForDeath;   
 UPROPERTY(EditAnywhere)                  
 TArray<class AFortPickup*>                         IncomingPickups;   
 UPROPERTY(EditAnywhere)                        
 TArray<struct FFortPickupEntryData>                PickupDirectionData;  
 UPROPERTY(EditAnywhere)                     
-bool                                               bIsKnockedback : 1;
+bool                                               bIsKnockedback;
 UPROPERTY(EditAnywhere)                        
-bool                                               bIsStunned : 1;    
+bool                                               bIsStunned;    
 UPROPERTY(EditAnywhere)                        
-bool                                               bIsStaggered : 1;    
+bool                                               bIsStaggered;    
 UPROPERTY(EditAnywhere)                      
 TEnumAsByte<EFortControlRecoveryBehavior>          ControlRecoveryBehavior; 
 UPROPERTY(EditAnywhere)                  
@@ -81,11 +81,11 @@ struct FVector_NetQuantize                         PushMomentum;
 UPROPERTY(EditAnywhere)                             
 class USkeletalMeshSocket*                         DeathHitSocket; 
 UPROPERTY(EditAnywhere)                           
-bool                                               bIsDBNO : 1; 
+bool                                               bIsDBNO; 
 UPROPERTY(EditAnywhere)                              
 float                                              LastPostRenderTraceTime;
 UPROPERTY(EditAnywhere)                   
-bool                                               bPostRenderTraceSucceeded : 1; 
+bool                                               bPostRenderTraceSucceeded; 
 UPROPERTY(EditAnywhere)            
 float                                              TeamBeaconMaxDist;       
 UPROPERTY(EditAnywhere)                  
@@ -95,7 +95,7 @@ float                                              LastTakeHitTimeTimeout;
 UPROPERTY(EditAnywhere)                    
 float                                              LastDamagedTime;   
 UPROPERTY(EditAnywhere)                        
-bool                                               bSkipAnalogJump : 1; 
+bool                                               bSkipAnalogJump; 
 UPROPERTY(EditAnywhere)                      
 class AFortWeapon*                                 CurrentlyAttachedWeapon; 
 UPROPERTY(EditAnywhere)                  
@@ -113,9 +113,9 @@ class USoundBase*                                  DefaultHardLandingSound;
 UPROPERTY(EditAnywhere)                   
 class USoundBase*                                  DefaultJumpSound;
 UPROPERTY(EditAnywhere)                          
-bool                                               bCanCapsuleBeUsedForTargeting : 1; 
+bool                                               bCanCapsuleBeUsedForTargeting; 
 UPROPERTY(EditAnywhere)        
-bool                                               bUseLineTestForDamageZoneBoneDetection : 1;
+bool                                               bUseLineTestForDamageZoneBoneDetection;
 UPROPERTY(EditAnywhere)
 float                                              LineTestForDamageZoneBoneDetectionRadius; 
 UPROPERTY(EditAnywhere) 
@@ -149,17 +149,17 @@ class UClass*                                      ShieldRegenDelayGameplayEffec
 UPROPERTY(EditAnywhere)           
 class UClass*                                      ShieldRegenGameplayEffect; 
 UPROPERTY(EditAnywhere)                
-bool                                               bIsInvulnerable : 1;
+bool                                               bIsInvulnerable;
 UPROPERTY(EditAnywhere)                       
 int                                                WeaponHolsterCounter; 
 UPROPERTY(EditAnywhere)                     
-bool                                               bWeaponHolstered : 1;
+bool                                               bWeaponHolstered;
 UPROPERTY(EditAnywhere)                      
 float                                              StaySpottedTime;
 UPROPERTY(EditAnywhere)                           
 struct FName                                       SpottedEvent;
 UPROPERTY(EditAnywhere)                              
-bool                                               bSpotted : 1;
+bool                                               bSpotted;
 UPROPERTY(EditAnywhere)                              
 class UFortFeedbackBank*                           DefaultFeedback;
 UPROPERTY(EditAnywhere)                           
@@ -173,7 +173,7 @@ class UFortDamageSet*                              DamageSet;
 UPROPERTY(EditAnywhere)                                
 class UFortMovementSet*                            MovementSet; 
 UPROPERTY(EditAnywhere)                              
-bool                                               bHealthSynced : 1; 
+bool                                               bHealthSynced; 
 UPROPERTY(EditAnywhere)                        
 struct FScriptMulticastDelegate                    OnAbilityDecisionWindowStackUpdated;
 UPROPERTY(EditAnywhere)       
@@ -181,11 +181,11 @@ class UFortAbilitySystemComponent*                 AbilitySystemComponent;
 UPROPERTY(EditAnywhere)                    
 TArray<struct FFortActiveMontageDecisionWindow>    DecisionWindowStack;
 UPROPERTY(EditAnywhere)                       
-bool                                               bPrimaryInputHeld : 1;
+bool                                               bPrimaryInputHeld;
 UPROPERTY(EditAnywhere)                     
-bool                                               bSecondaryInputHeld : 1;
+bool                                               bSecondaryInputHeld;
 UPROPERTY(EditAnywhere)                   
-bool                                               bPrimaryInputQueued : 1;
+bool                                               bPrimaryInputQueued;
 UPROPERTY(EditAnywhere)                   
 struct FGameplayTagContainer                       GameplayTags;
 UPROPERTY(EditAnywhere)                              
@@ -217,7 +217,7 @@ TMap<int, int>                                     LODToFrameSkipMap;
 //UPROPERTY(EditAnywhere)                         
 //Unknown Enum TEnumAsByte<>                       UroShiftBucket;
 UPROPERTY(EditAnywhere)            
-bool                                               bPostProcessNavLocation : 1;
+bool                                               bPostProcessNavLocation;
 UPROPERTY(EditAnywhere)               
 struct FFortConversationSentence                   CurrentSentence;
 UPROPERTY(EditAnywhere)                           
